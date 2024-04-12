@@ -1,0 +1,10 @@
+<div class="container d-flex just-fy-content-center align-items-middle p-4">
+  <form method="post" [formGroup]="sampleForm">
+    <div class="form-group">
+      <label for="enterData" class="d-flex justify-content-center">Enter data here : </label>
+      <input type="text" class="form-control m-4" id="enterData" aria-describedby="enterData"
+        placeholder="Enter data here" formControlName="data">
+    </div>
+    <button type="submit" class="btn btn-dark m-4" (click)="onSubmit()">Submit</button>
+  </form>
+</div>

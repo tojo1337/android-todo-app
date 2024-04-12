@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="container d-flex just-fy-content-center align-items-middle p-4">
+        <div class="container">
+            <form method="post" [formGroup]="todoForm">
+                <div class="form-group">
+                    <label for="enterData" class="d-flex justify-content-center">Enter todo here : </label>
+                    <input type="text" class="form-control m-4" id="enterData" aria-describedby="enterData"
+                        placeholder="Enter data here" formControlName="task">
+                </div>
+                <button type="submit" class="btn btn-dark m-4" (click)="onSubmit()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of arr; index as i">
+                    <tr>
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{data.task}}</td>
+                        <td>
+                            <button class="btn btn-dark" (click)="onDelete(i)">
+                                <i class="bi bi-check"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
